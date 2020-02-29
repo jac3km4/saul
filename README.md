@@ -6,7 +6,7 @@ This library allows you to derive HTTP routing for services from nothing else bu
 
 simple usage:
 ```scala
-type Endpoint = POST / "users" / path[String] as User
+type Endpoint = POST as User / "users" / path[String]
 
 val api =
   Servable[Endpoint].serve { (path: String, body: User) =>
